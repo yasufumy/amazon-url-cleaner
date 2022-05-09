@@ -1,0 +1,12 @@
+{
+  "name": "Amazon URL Cleaner",
+  "version": "0.1.0",
+  "description": "Remove metadata from Amazon product URLs.",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["https://www.amazon.co.jp/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}

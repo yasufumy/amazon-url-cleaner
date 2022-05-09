@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "description": "Remove metadata from Amazon product URLs.",
+  "name": "amazon-url-cleaner",
+  "devDependencies": {
+    "@types/chrome": "^0.0.184",
+    "@types/jest": "^27.5.0",
+    "copy-webpack-plugin": "^10.2.4",
+    "jest": "^28.0.3",
+    "prettier": "^2.6.2",
+    "ts-jest": "^28.0.1",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "webpack --watch --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "lint": "prettier --check 'src/**/*.ts'"
+  }
+}
