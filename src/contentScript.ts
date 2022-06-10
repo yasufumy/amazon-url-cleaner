@@ -1,12 +1,15 @@
-import { clean_amazon_pathname } from "./cleaners";
+import { clean_product_pathname, is_product_pathname } from "./amazon";
 
-const pathname = document.location.pathname;
-const cleaned_pathname = clean_amazon_pathname(pathname);
+function main() {
+  const pathname = document.location.pathname;
 
-if (
-  pathname !== cleaned_pathname ||
-  document.location.search !== "" || // query parameters
-  document.location.hash // fragment parameters
-) {
+  if (!is_product_pathname(pathname)) {
+    return;
+  }
+
+  const cleaned_pathname = clean_product_pathname(pathname);
+
   history.replaceState(null, "", cleaned_pathname);
 }
+
+main();
